@@ -1,10 +1,18 @@
 #### vi_1 dataset
 
+#' @name vi_1
+#'
+#' @docType data
+#'
+#' @usage data(vi_1)
+#'
+#' @format A \code{data.table}.
+#'
+#' @keywords variable_interval
+#'
 #' vi_1 dataset
 #'
-#' Data from a single variable-interval experiment.
-#'
-#' This experiment was run using MED-PC and in-line Pascal procedures were used to arrange the reinforcement delvieries. The random number generation in Pascal requires setting a seed. The way that Pascal sets seeds is that the seed is based on the time at which the set seed function was called. As a result, subjects that started their experiments at the same time had the first reinforcement arranged at the same time. The set seed function is called each time a random number is requested, so the subsequent reinforcements are arranged at different times due to the variability in the organisms' responding.
+#' Data from a single variable-interval experiment. 11 pigeons for subjects Arranged inter-reinforcement intervals: 30s, 60s, 240s. Reinforced by 2s access to wheat. Session dueation was 1800s.
 #'
 #' @section{ Subjects }:{
 #'     11 pigeons with subject labels: 221, 222, 223, 224, 225, S01, S02, S03, S04, S05, S06.
@@ -14,6 +22,10 @@
 #'
 #' @section{ VI schedule }:{
 #'     A reinforcement delivery is arranged by sampling inter-reinforcement intervals from an Exponential distribution. The arranged inter-reinforcement intervals were: 30s, 60s, and 240s. See the \code{Experiment} and \code{VI} columns.
+#' }
+#'
+#' @section{ Stimuli }:{
+#'     During the session, a single response key was lit red. When reinforcement was delivered, the keylight was turned off. A houselight was lit for the duration of the session.
 #' }
 #'
 #' @section{ Reinforcement delivery }:{
@@ -28,19 +40,31 @@
 #'     Sessions lasted 1800s.
 #' }
 #'
+#' @section{ Homecages }:{
+#'     Pigeons were kept in homecages in which water and grit were freely available.
+#' }
+#'
+#' @section{ Experimental chamber and apparatus }:{
+#'     The experiments were conducted in MED Associates experimental chambers. These chambers were located in the same room as the home cages. The experimental chambers were themselves contained in a larger box that provided sound shielding and ventilation. For the experimental chambers, see \link{http://www.med-associates.com/product/extra-tall-modular-test-chamber/}. Each experimental chamber had dimensions: 300mm, 320mm, 2400mm (height, width, depth). Each chamber had a waste pan, see \link{http://www.med-associates.com/product/stainless-steel-waste-pan/} and a steel grid for the subject to stand on, see \link{http://www.med-associates.com/product/stainless-steel-grid-floor-for-pigeon-narrow-spacing/}. The larger box is similar to \link{http://www.med-associates.com/product/standard-mdf-sound-attenuating-cubicle-with-full-size-viewing-window/} without the window. A fan provided white noise and ventilation.
+#'
+#'     Each chamber had a houselight.
+#'
+#'     A row of three response keys were located on one side of the chamber, 220mm above the floor and 80mm apart (centre to centre). Each key was 25mm in diameter. The stimuli were projected onto these response keys. See \link{http://www.med-associates.com/product/response-key-with-lcd-stimulus-display/}. Only the left key was used for this experiment. 0.1N of force was required to activate the response key.
+#'
+#'     A hopper fillted with wheat was located behind a magazine aperture. The aperture was 80mm above the floor of the experimental chamber. The dimensions of the aperture was 50mm, 60mm, 45mm (height, width, depth). During reinforcement, a light above the magazine was lit and the hopper was raised for the duration of the reinforcement delivery.
+#' }
+#'
+#' @section{ Software }:{
+#'     The experimental protocol was run and events were recorded with MED-PC.
+#'
+#'     Inline Pascal procedures were used to arrange the reinforcement delvieries. The random number generation in Pascal requires setting a seed. The way that Pascal sets seeds is that the seed is based on the time at which the set seed function was called. As a result, subjects that started their experiments at the same time had the first reinforcement arranged at the same time. The set seed function is called each time a random number is requested, so the subsequent reinforcements are arranged at different times due to the variability in the organisms' responding.
+#' }
+#'
 #' @section{ Additional notes }:{
 #'     A bug occurred with MED-PC, where a reinforcement delivery that overlapped with the end of the session caused a response to be recorded at the end of the session. For example, if reinforcement was delivered at 1799 seconds, the reinforcement delivery would have extended to 1801 seconds. This resulted in a response to be recorded at 1800 seconds. These responses have been removed from the event records. But the \code{resp} counter in the \code{resp} column still has this extra response in it. Hence, calculating molar rates from the \code{resp} column will be incorrect without correcting for this.
 #'
 #'     We had a problem with the hardwhare where the response keys would "bounce" after some responses with a particular response topography. This resulted in more than one response being recorded for some key pecks. An attempt to remedy the key bounding was to only record responses with inter-response times longer than or equal to 0.1s. However, the duration of the bouncing was on the order of 0.1s. Therefore, in some cases, the key bounces are recorded. This is evident when examining the inter-response time distributions. For many subjects, there is a group of inter-response times around 0.1s to 0.15s that are separate from all of the other inter-response times. In some cases, pigeons may "nibble" on the key resulting in some legitimate response times around this 0.1s to 0.15s band; in these cases, it is difficult to tell which responses are "nibbles" and which are keybounces. See examples.
 #' }
-#'
-#' @docType data
-#'
-#' @usage data(vi_1)
-#'
-#' @format A \code{data.table}.
-#'
-#' @keywords variable_interval
 #'
 #' @examples
 #' #### Code for reading the raw files and producing the data file ####
@@ -100,4 +124,4 @@
 #' # Note the large group smaller than 0.2s. These are from a combination of "nibbling" responses and bouncing keys.
 #' hist( irts[ Subject == 224, V1 ], breaks = 100000 ], xlim = c(0, 1) )
 
-
+NULL
