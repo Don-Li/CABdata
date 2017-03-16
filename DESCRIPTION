@@ -1,0 +1,17 @@
+Package: CABdata
+Type: Package
+Title: Datasets for the CAB package
+Version: 0.1.0
+Author: Don Li
+Maintainer: Don Li <yli877@aucklanduni.ac.nz>
+Description: Contains behavioural datasets from experiments.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Imports:
+    Rcpp (>= 0.12.4)
+Depends:
+    CAB,
+    data.table
+LinkingTo: Rcpp
+RoxygenNote: 5.0.1
