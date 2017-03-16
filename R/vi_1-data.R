@@ -1,15 +1,5 @@
 #### vi_1 dataset
 
-#' @name vi_1
-#'
-#' @docType data
-#'
-#' @usage data(vi_1)
-#'
-#' @format A \code{data.table}.
-#'
-#' @keywords variable_interval
-#'
 #' vi_1 dataset
 #'
 #' Data from a single variable-interval experiment. 11 pigeons for subjects Arranged inter-reinforcement intervals: 30s, 60s, 240s. Reinforced by 2s access to wheat. Session dueation was 1800s.
@@ -123,5 +113,11 @@
 #' # Subject 224 small irts
 #' # Note the large group smaller than 0.2s. These are from a combination of "nibbling" responses and bouncing keys.
 #' hist( irts[ Subject == 224, V1 ], breaks = 100000 ], xlim = c(0, 1) )
+#'
+#' @name vi_1
+#' @docType data
+#' @usage data(vi_1)
+#' @format A \code{data.table}.
+#' @keywords variable_interval
 
 NULL

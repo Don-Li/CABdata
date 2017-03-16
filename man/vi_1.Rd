@@ -3,9 +3,13 @@
 \docType{data}
 \name{vi_1}
 \alias{vi_1}
+\title{vi_1 dataset}
 \format{A \code{data.table}.}
 \usage{
 data(vi_1)
+}
+\description{
+Data from a single variable-interval experiment. 11 pigeons for subjects Arranged inter-reinforcement intervals: 30s, 60s, 240s. Reinforced by 2s access to wheat. Session dueation was 1800s.
 }
 \section{{ Subjects }}{
 {
@@ -134,34 +138,7 @@ hist( irts[ Subject == 224, V1 ], breaks = 10000 ] )
 # Subject 224 small irts
 # Note the large group smaller than 0.2s. These are from a combination of "nibbling" responses and bouncing keys.
 hist( irts[ Subject == 224, V1 ], breaks = 100000 ], xlim = c(0, 1) )
+
 }
-\keyword{11}
-\keyword{1800s.}
-\keyword{240s.}
-\keyword{2s}
-\keyword{30s,}
-\keyword{60s,}
-\keyword{Arranged}
-\keyword{Data}
-\keyword{Reinforced}
-\keyword{Session}
-\keyword{a}
-\keyword{access}
-\keyword{by}
-\keyword{dataset}
-\keyword{dueation}
-\keyword{experiment.}
-\keyword{for}
-\keyword{from}
-\keyword{inter-reinforcement}
-\keyword{intervals:}
-\keyword{pigeons}
-\keyword{single}
-\keyword{subjects}
-\keyword{to}
-\keyword{variable-interval}
 \keyword{variable_interval}
-\keyword{vi_1}
-\keyword{was}
-\keyword{wheat.}
 
