@@ -57,7 +57,7 @@ Data from a single variable-interval experiment. 11 pigeons for subjects Arrange
 
 \section{{ Experimental chamber and apparatus }}{
 {
-    The experiments were conducted in MED Associates experimental chambers. These chambers were located in the same room as the home cages. The experimental chambers were themselves contained in a larger box that provided sound shielding and ventilation. For the experimental chambers, see \link{http://www.med-associates.com/product/extra-tall-modular-test-chamber/}. Each experimental chamber had dimensions: 300mm, 320mm, 2400mm (height, width, depth). Each chamber had a waste pan, see \link{http://www.med-associates.com/product/stainless-steel-waste-pan/} and a steel grid for the subject to stand on, see \link{http://www.med-associates.com/product/stainless-steel-grid-floor-for-pigeon-narrow-spacing/}. The larger box is similar to \link{http://www.med-associates.com/product/standard-mdf-sound-attenuating-cubicle-with-full-size-viewing-window/} without the window. A fan provided white noise and ventilation.
+    The experiments were conducted in MED Associates experimental chambers. These chambers were located in the same room as the home cages. The experimental chambers were themselves contained in a larger box that provided sound shielding and ventilation. For the experimental chambers, see \url{http://www.med-associates.com/product/extra-tall-modular-test-chamber/}. Each experimental chamber had dimensions: 300mm, 320mm, 2400mm (height, width, depth). Each chamber had a waste pan, see \url{http://www.med-associates.com/product/stainless-steel-waste-pan/} and a steel grid for the subject to stand on, see \url{http://www.med-associates.com/product/stainless-steel-grid-floor-for-pigeon-narrow-spacing/}. The larger box is similar to \url{http://www.med-associates.com/product/standard-mdf-sound-attenuating-cubicle-with-full-size-viewing-window/} without the window. A fan provided white noise and ventilation.
 
     Each chamber had a houselight.
 
@@ -139,6 +139,10 @@ hist( irts[ Subject == 224, V1 ], breaks = 10000 ] )
 # Note the large group smaller than 0.2s. These are from a combination of "nibbling" responses and bouncing keys.
 hist( irts[ Subject == 224, V1 ], breaks = 100000 ], xlim = c(0, 1) )
 
+}
+\seealso{
+\code{\link[CAB]{import_medpc_to_formal_event_record}} For the function that read the data from the raw files.
+\code{\link[CAB]{event_record}} For the \code{formal_event_record} class.
 }
 \keyword{variable_interval}
 

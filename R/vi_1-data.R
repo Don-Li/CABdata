@@ -35,7 +35,7 @@
 #' }
 #'
 #' @section{ Experimental chamber and apparatus }:{
-#'     The experiments were conducted in MED Associates experimental chambers. These chambers were located in the same room as the home cages. The experimental chambers were themselves contained in a larger box that provided sound shielding and ventilation. For the experimental chambers, see \link{http://www.med-associates.com/product/extra-tall-modular-test-chamber/}. Each experimental chamber had dimensions: 300mm, 320mm, 2400mm (height, width, depth). Each chamber had a waste pan, see \link{http://www.med-associates.com/product/stainless-steel-waste-pan/} and a steel grid for the subject to stand on, see \link{http://www.med-associates.com/product/stainless-steel-grid-floor-for-pigeon-narrow-spacing/}. The larger box is similar to \link{http://www.med-associates.com/product/standard-mdf-sound-attenuating-cubicle-with-full-size-viewing-window/} without the window. A fan provided white noise and ventilation.
+#'     The experiments were conducted in MED Associates experimental chambers. These chambers were located in the same room as the home cages. The experimental chambers were themselves contained in a larger box that provided sound shielding and ventilation. For the experimental chambers, see \url{http://www.med-associates.com/product/extra-tall-modular-test-chamber/}. Each experimental chamber had dimensions: 300mm, 320mm, 2400mm (height, width, depth). Each chamber had a waste pan, see \url{http://www.med-associates.com/product/stainless-steel-waste-pan/} and a steel grid for the subject to stand on, see \url{http://www.med-associates.com/product/stainless-steel-grid-floor-for-pigeon-narrow-spacing/}. The larger box is similar to \url{http://www.med-associates.com/product/standard-mdf-sound-attenuating-cubicle-with-full-size-viewing-window/} without the window. A fan provided white noise and ventilation.
 #'
 #'     Each chamber had a houselight.
 #'
@@ -55,6 +55,10 @@
 #'
 #'     We had a problem with the hardwhare where the response keys would "bounce" after some responses with a particular response topography. This resulted in more than one response being recorded for some key pecks. An attempt to remedy the key bounding was to only record responses with inter-response times longer than or equal to 0.1s. However, the duration of the bouncing was on the order of 0.1s. Therefore, in some cases, the key bounces are recorded. This is evident when examining the inter-response time distributions. For many subjects, there is a group of inter-response times around 0.1s to 0.15s that are separate from all of the other inter-response times. In some cases, pigeons may "nibble" on the key resulting in some legitimate response times around this 0.1s to 0.15s band; in these cases, it is difficult to tell which responses are "nibbles" and which are keybounces. See examples.
 #' }
+#'
+#' @seealso
+#' \code{\link[CAB]{import_medpc_to_formal_event_record}} For the function that read the data from the raw files.
+#' \code{\link[CAB]{event_record}} For the \code{formal_event_record} class.
 #'
 #' @examples
 #' #### Code for reading the raw files and producing the data file ####
