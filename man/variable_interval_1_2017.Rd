@@ -91,25 +91,31 @@ general_arrays = list( J = "arranged_vi" ) variable_interval_1_2017 =
 import_medpc_to_formal_event_record( "Backup", variable_arrays, event_arrays,
 general_arrays, file_path = file_path, round = 2 )
 
-#Fix some bad labels variable_interval_1_2017[ Experiment == "vi_30240", Experiment := "vi_240" ]
+#Fix some bad labels
+variable_interval_1_2017[ Experiment == "vi_30240", Experiment := "vi_240" ]
 variable_interval_1_2017[ MSN == "new_don_vi_60", Experiment := "vi_60" ] #Take out subject 226
 and S01 variable_interval_1_2017 = variable_interval_1_2017[ (Subject != 226 & Subject != "S01"), ]
 
-#Fix column names setnames( variable_interval_1_2017, c("Start Date","End Date" ), c(
+#Fix column names
+setnames( variable_interval_1_2017, c("Start Date","End Date" ), c(
 "Start_Date", "End_Date" ) ) #Fix the dates variable_interval_1_2017[ , Start_Date := as.Date(
 Start_Date, format = "\%m/\%d/\%y" ) ] variable_interval_1_2017[ , End_Date := as.Date( End_Date,
 format = "\%m/\%d/\%y" ) ]
 
-#Add numerical values for the VI switch_keys = list( vi_30 = 30, vi_60 = 60,
+#Add numerical values for the VI
+switch_keys = list( vi_30 = 30, vi_60 = 60,
 vi_240 = 240 ) switch_fx = function( value, switch_keys ){ switch_keys = c(
 list( EXPR = value ), switch_keys ) do.call( switch, switch_keys ) } variable_interval_1_2017[ ,
 VI :=  vapply( Experiment, function(x) switch_fx( x, switch_keys ), FUN.VALUE
 
-#Order by subjects, date setorder( variable_interval_1_2017, Subject, Start_Date )
+#Order by subjects, date
+setorder( variable_interval_1_2017, Subject, Start_Date )
 
-#Add number for vi sessions variable_interval_1_2017[ , VI_session := rep(1:20) ]
+#Add number for vi sessions
+variable_interval_1_2017[ , VI_session := rep(1:20) ]
 
-#Save the data save( variable_interval_1_2017, file = "variable_interval_1_2017.RData")
+#Save the data
+save( variable_interval_1_2017, file = "variable_interval_1_2017.RData")
 
 ### Showing small inter-response times and bouncing keys ####
 library( CAB )
@@ -144,6 +150,8 @@ hist( irts[ Subject == 224, V1 ], breaks = 100000 ], xlim = c(0, 1) )
 \code{\link[CAB]{import_medpc_to_formal_event_record}} For the function that read the data from the raw files.
 
 \code{\link[CAB]{event_record}} For the \code{formal_event_record} class.
+
+\link{variable_interval_1_2017_tibble} for the same dataset but with \code{tibble}s (i.e. data frames) instead of \code{formal_event_record}s or \code{data.table}s.
 }
 \keyword{variable_interval}
 

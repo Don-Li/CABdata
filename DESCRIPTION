@@ -12,6 +12,7 @@ Imports:
     Rcpp (>= 0.12.4)
 Depends:
     CAB,
-    data.table
+    data.table,
+    tibble
 LinkingTo: Rcpp
 RoxygenNote: 5.0.1
